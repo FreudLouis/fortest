@@ -1,4 +1,3 @@
-"github update"
 
 import os
 import re
@@ -998,7 +997,8 @@ def Find_device_items_Atlas_from(file_info_dict):
                     find_pass_ = re.search(r'(Successfully completed command|[Tt]est Complete!)',log_sections)
                     if find_pass_:
                         dict_testitem_to_tree[str(index_temp)]['pass_fail'] = 'pass'
-                    find_fail_ = re.search('(Failed command|TestFailedError)',log_sections)
+                    # find_fail_ = re.search('(Failed command|TestFailedError)',log_sections)
+                    find_fail_ = re.search('Failed command',log_sections)
                     if find_fail_:
                         dict_testitem_to_tree[str(index_temp)]['pass_fail'] = 'fail'
 
